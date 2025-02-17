@@ -19,7 +19,7 @@ def hw02_2(q2_pdf):
     loader_q2 = PyPDFLoader(q2_pdf)
     document_q2 = loader_q2.load()
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=50, chunk_overlap=0, 
+        chunk_size=20, chunk_overlap=0, 
         separators=[r"第\s+.*\s+章\s+", r"第\s+.*\s+條\s+"],
         is_separator_regex = True)
     chunks = splitter.split_text(" ".join([doc.page_content for doc in document_q2]))
